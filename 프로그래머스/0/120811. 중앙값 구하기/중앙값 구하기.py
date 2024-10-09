@@ -14,8 +14,9 @@ def solution(array):
     2. (배열의 길이)//2 번째 인덱스의 값을 반환한다.
     
     """
-    print(array)
     array.sort() #혹은 array = sorted(array)
-    print(array)
     middle = len(array)//2
     return array[middle]
+
+def solution_simple(array)"
+    return sorted(array)[len(array)//2]
