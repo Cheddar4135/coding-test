@@ -9,3 +9,9 @@ def solution(slice, n):
     while (slice*ans)//n < 1:
         ans+=1
     return ans
+
+def solution(slice, n):
+    """피자문제1 응용
+    (n-1)//slice
+    """
+   return (n-1)//slice +1
