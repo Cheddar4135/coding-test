@@ -10,7 +10,6 @@ def solution(angle):
     else:
         print("angle범위가 초과되었습니다.")
 
-
 def solution(angle):
     """코드분석
     angle//90 : 예각이라면 0, 평각이라면 2, 둔각이나 직각은 1
