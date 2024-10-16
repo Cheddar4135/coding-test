@@ -5,5 +5,5 @@ def solution(n):
     등차수열 합공식: num*(2a+(num-1)d)/2 => num * (4 +(num-1)*2)/2
 
     """
-    num = n//2
-    return num * (4 +(num-1)*2)/2
+    
+    return sum(range(2,n+1,2))
