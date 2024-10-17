@@ -10,5 +10,14 @@ def solution(emergency):
     >index()는 문자열, 리스트, 튜플 모두 사용가능하지만, 찾는 값이 없을 경우 ValueError 에러발생
     
     """
-    rank = sorted(emergency,reverse=True)
-    return [rank.index(i)+1 for i in emergency]
+    ordered = sorted(emergency,reverse=True)
+    return [ordered.index(i)+1 for i in emergency]
+
+def solution(emergency):
+    """딕셔너리 사용해 O(n)으로 time complexity줄이기인데 사실 이해안감
+    """
+    answer = []
+    emer_ls = {e: i + 1 for i, e in enumerate(sorted(emergency)[::-1])}
+    for e in emergency:
+        answer.append(emer_ls[e])
+    return answer
