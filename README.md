@@ -7,11 +7,13 @@
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/Cheddar4135/coding-test/tree/master/0020-valid-parentheses) |
+| [0402-remove-k-digits](https://github.com/Cheddar4135/coding-test/tree/master/0402-remove-k-digits) |
 ## Stack
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/Cheddar4135/coding-test/tree/master/0020-valid-parentheses) |
 | [0234-palindrome-linked-list](https://github.com/Cheddar4135/coding-test/tree/master/0234-palindrome-linked-list) |
+| [0402-remove-k-digits](https://github.com/Cheddar4135/coding-test/tree/master/0402-remove-k-digits) |
 ## Linked List
 |  |
 | ------- |
@@ -24,4 +26,12 @@
 |  |
 | ------- |
 | [0234-palindrome-linked-list](https://github.com/Cheddar4135/coding-test/tree/master/0234-palindrome-linked-list) |
+## Greedy
+|  |
+| ------- |
+| [0402-remove-k-digits](https://github.com/Cheddar4135/coding-test/tree/master/0402-remove-k-digits) |
+## Monotonic Stack
+|  |
+| ------- |
+| [0402-remove-k-digits](https://github.com/Cheddar4135/coding-test/tree/master/0402-remove-k-digits) |
 <!---LeetCode Topics End-->
