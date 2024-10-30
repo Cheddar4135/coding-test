@@ -33,27 +33,15 @@ class Stack():
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = Stack()
-        for char in s:
-            if char == '(':
-                stack.push('small')
-            elif char == '{':
-                stack.push('middle')
-            elif char == '[':
-                stack.push('big')
-
-            elif char == ')':
-                if stack.peek() == 'small':
-                    stack.pop()
-                else: return False
-            elif char == '}':
-                if stack.peek() == 'middle':
-                    stack.pop()
-                else: return False
-            elif char ==']':
-                if stack.peek() == 'big':
-                    stack.pop()
-                else: return False
-        if stack.is_empty():
-            return True
-        else:
-            return False
+        for bracket in s:
+            if bracket in {"(", "[", "{"}:        
+                stack.push(bracket)
+            elif bracket ==')' and stack.peek() == '(':
+                stack.pop()
+            elif bracket ==']' and stack.peek() == '[':
+                stack.pop()
+            elif bracket =='}' and stack.peek() == '{':
+                stack.pop()
+            else:
+                return False
+        return stack.is_empty()
