@@ -7,6 +7,7 @@
 |  |
 | ------- |
 | [0020-valid-parentheses](https://github.com/Cheddar4135/coding-test/tree/master/0020-valid-parentheses) |
+| [0387-first-unique-character-in-a-string](https://github.com/Cheddar4135/coding-test/tree/master/0387-first-unique-character-in-a-string) |
 | [0402-remove-k-digits](https://github.com/Cheddar4135/coding-test/tree/master/0402-remove-k-digits) |
 | [1128-remove-all-adjacent-duplicates-in-string](https://github.com/Cheddar4135/coding-test/tree/master/1128-remove-all-adjacent-duplicates-in-string) |
 ## Stack
@@ -48,4 +49,13 @@
 | ------- |
 | [0225-implement-stack-using-queues](https://github.com/Cheddar4135/coding-test/tree/master/0225-implement-stack-using-queues) |
 | [0232-implement-queue-using-stacks](https://github.com/Cheddar4135/coding-test/tree/master/0232-implement-queue-using-stacks) |
+| [0387-first-unique-character-in-a-string](https://github.com/Cheddar4135/coding-test/tree/master/0387-first-unique-character-in-a-string) |
+## Hash Table
+|  |
+| ------- |
+| [0387-first-unique-character-in-a-string](https://github.com/Cheddar4135/coding-test/tree/master/0387-first-unique-character-in-a-string) |
+## Counting
+|  |
+| ------- |
+| [0387-first-unique-character-in-a-string](https://github.com/Cheddar4135/coding-test/tree/master/0387-first-unique-character-in-a-string) |
 <!---LeetCode Topics End-->
