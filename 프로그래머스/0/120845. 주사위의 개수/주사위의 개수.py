@@ -12,3 +12,13 @@ def solution(box, n):
     for i in box:
         sum*=i
     return sum
+
+def solution(box,n):
+    x,y,z = box
+    return (x//n) * (y//n) * (z//n)
+
+def solution(box,n):
+    ans = 1
+    for b in box:
+        ans *= b//n
+    return ans
