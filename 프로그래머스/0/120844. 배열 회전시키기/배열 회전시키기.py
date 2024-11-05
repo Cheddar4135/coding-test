@@ -10,4 +10,4 @@ def solution(numbers, direction):
         new = [numbers[-1]] + numbers[:-1]
     elif direction=="left":
         new = numbers[1:]+ [numbers[0]]
-    return new
+    return new 
