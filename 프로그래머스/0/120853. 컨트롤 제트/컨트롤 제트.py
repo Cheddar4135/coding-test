@@ -1,6 +1,5 @@
 def solution(s):
     slist = s.split(' ')
-    print(slist)
     ans = 0
     for i,char in enumerate(slist):
         if char=='Z':
@@ -8,3 +7,13 @@ def solution(s):
         else:
             ans+=int(char)
     return ans
+
+def solution(s):
+    stack = []
+    for a in s.split():
+        if a != 'Z':
+            stack.append(int(a))
+        else:
+            if stack:
+                stack.pop()
+    return sum(stack)
