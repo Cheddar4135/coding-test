@@ -6,3 +6,7 @@ def solution(order):
             ans+=1
         order//=10
     return ans
+
+def solution(order):
+    answer = len([1 for ch in str(order) if ch in "369"])
+    return answer
