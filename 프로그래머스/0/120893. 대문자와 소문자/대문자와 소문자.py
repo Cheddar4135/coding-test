@@ -16,3 +16,28 @@ def solution(my_string):
         else:
             ans+=chr(ord(char)-32)
     return ans
+
+
+def solution(my_string):
+    """
+    더 설명력 좋은 코드 버전
+    """
+    ans =''
+    for i in my_string:
+        if ord(i) >= ord('a') and ord(i) <= ord('z'):
+            ans += chr(ord(i)-32)
+        if ord(i) >= ord('A') and ord(i) <= ord('Z'):
+            ans += chr(ord(i)+32)
+    return ans
+
+def solution(my_string):
+    """
+    사실 문자열 메서드 쓰면 됨. 
+    """
+    ans = ''
+    for char in my_string:
+        if char.isupper():
+            ans+=char.lower()
+        else:
+            ans+=char.upper()
+    return ans
