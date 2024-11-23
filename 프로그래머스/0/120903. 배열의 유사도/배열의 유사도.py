@@ -1,8 +1,6 @@
 def solution(s1, s2):
-    answer=0
-    for i in s1:
-        if i in s2:
-            answer+=1
+    dict = {i:1 for i in s1}
+    answer = sum(1 for j in s2 if j in dict)
     
     
     return answer
