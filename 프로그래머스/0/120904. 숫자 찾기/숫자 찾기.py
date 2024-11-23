@@ -6,3 +6,9 @@ def solution(num, k):
         if int(num[i]) == k:
             return i+1
     return -1
+
+def solution(num, k):
+    try:
+        return str(num).index(str(k)) + 1
+    except ValueError:
+        return -1
