@@ -1,3 +1,4 @@
+#오류버전
 def solution(n, numlist):
     """
     numlist의 원소들 중 n으로 나눴을 때 나머지가 있는 녀석들을 제거해야하는 함수
@@ -8,8 +9,17 @@ def solution(n, numlist):
     (looping되는 순회자를 순환문 안에서 건드는거)
     늘 조심해야지. 어쩔 수 없이 inplace는 어렵겠군
     """
+    for v in numlist:
+        if v%n:
+            numlist.remove(v)
+    return ans
+
+#고친 버전
+def solution(n,numlist):
     ans = []
     for v in numlist:
         if not v%n:
             ans.append(v)
     return ans
+def solution(n,numlist):
+    return [i for i in numlist if not i%n]
