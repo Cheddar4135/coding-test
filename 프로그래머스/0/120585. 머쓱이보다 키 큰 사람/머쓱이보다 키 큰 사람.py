@@ -4,3 +4,6 @@ def solution(array, height):
         if item > height:
             taller+=1
     return taller
+
+def solution(array, height):
+    return len([i for i in array if i > height])
