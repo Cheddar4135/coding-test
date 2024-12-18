@@ -8,3 +8,10 @@ def solution(array):
                 count+=1
         
     return count
+
+
+
+def solution(array):
+    #그냥 "[2,7,5,77]"로 리스트 자체를 문자열로 바꿔서 7의 개수를 세는 방법도 있다.
+    return str(array).count('7')
+    
