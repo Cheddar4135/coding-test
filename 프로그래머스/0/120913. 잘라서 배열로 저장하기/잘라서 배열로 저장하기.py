@@ -11,3 +11,9 @@ def solution(my_str, n):
     for i in range(items): 
         ans.append(my_str[i*n:(i+1)*n])    
     return ans
+
+def solution(my_str,n):
+    ans = []
+    for i in range(0,len(my_str),n): #n=3이라면 0,3,6,..
+        ans.append(my_str[i:i+n])
+    return ans
