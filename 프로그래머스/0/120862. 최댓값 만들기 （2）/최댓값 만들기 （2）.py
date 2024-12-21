@@ -6,3 +6,8 @@ def solution(numbers):
             ans = max(ans, numbers[i]*numbers[j])
             
     return ans
+
+
+def solution(numbers):
+    numbers.sort()
+    return max(numbers[0]*numbers[1],numbers[-2]*numbers[-1])
