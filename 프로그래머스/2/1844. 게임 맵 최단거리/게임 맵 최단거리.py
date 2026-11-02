@@ -1,4 +1,6 @@
-"""난이도:
+"""난이도: 중상상
+> 총평:
+  알고리즘 선택 자체는 쉽게 떠오른다. 근데 이제 구현이 힘든... 거의 2시간걸렸다.
 > 문제분석:
   maps 크기 자체는 작다. 100*100이 최대임. (r,c)=1이 벽이 없는 자리다
   첫위치+마지막위치 포함해서 칸의 개수를 세야한다. 도착불가능할시 -1
@@ -7,17 +9,19 @@
   최단거리(depth)를 찾아야하기에 bfs가 적합할 듯하다.
 """
 
-"""
-maps -> graphs
-graphs=[
-  (0,0) -> (1,0)
-  (0,2) -> (0,3), (1,2)
-  ...
-]
-"""
 from collections import deque
 
-def solution(maps):
+def solution1(maps):
+    """풀이1
+    1. 맵을 리스트형 그래프로 변환한다.
+        maps -> graphs
+        graphs=[
+          (0,0) -> (1,0)
+          (0,2) -> (0,3), (1,2)
+          ...
+        ]
+    2. 다익스트라를 적용한다.
+    """
     n = len(maps)
     m = len(maps[0])
     
@@ -64,3 +68,39 @@ def solution(maps):
     ans = dikstra((0,0))
     ans = ans[n-1][m-1]
     return ans+1 if ans<9999 else -1
+
+def solution(maps):
+    """방법1개선
+    1. 그래프를 따로 만들지 않고 바로 계산해보자.
+    2. 간선이 모두 1이기 때문에 더 짧은 거리인지 비교할 필요가 없다.
+    """
+    n=len(maps)
+    m=len(maps[0])
+    
+    def bfs(start):
+        sr, sc = start
+        dist = [[999]*m for i in range(n)]
+        dist[sr][sc]=0
+        queue=deque([(sr,sc)])
+        
+        while queue:
+            r,c = queue.popleft()
+            nxt = []
+            if r-1 >=0 and maps[r-1][c] : nxt.append((r-1,c)) #append는 튜플을 하나의 원소로 받음
+            if c-1 >=0 and maps[r][c-1] : nxt.append((r,c-1))
+            if r+1 <=n-1 and maps[r+1][c] : nxt.append((r+1,c))
+            if c+1 <=m-1 and maps[r][c+1] : nxt.append((r,c+1))
+            
+            for nr, nc in nxt:
+                if dist[nr][nc] ==999:
+                    dist[nr][nc] = dist[r][c] + 1
+                    queue.append([nr,nc])
+        print(dist)
+        return dist
+        
+    ans = bfs((0,0))[n-1][m-1]
+    
+    return ans+1 if ans <999 else -1
+        
+    
+    
