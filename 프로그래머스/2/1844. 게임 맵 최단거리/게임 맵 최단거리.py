@@ -7,6 +7,8 @@
 > 알고리즘 선택:
   (r,c)=1끼리 연결이용해서 그래프 구성하고 루트(시작점)부터 특정리프노드(도착점)까지 거리 세기
   최단거리(depth)를 찾아야하기에 bfs가 적합할 듯하다.
+> 파이썬 문법:
+  deque([(r,c)]) 꼭 튜플을 리스트로 한번 감싸줘야한다. deque((r,c))->deque([r,c])
 """
 
 from collections import deque
@@ -73,34 +75,38 @@ def solution(maps):
     """방법1개선
     1. 그래프를 따로 만들지 않고 바로 계산해보자.
     2. 간선이 모두 1이기 때문에 더 짧은 거리인지 비교할 필요가 없다.
+    3. 999 대신 미방문은 -1로, 상하좌우는 방향 배열 사용한 반복문으로
+    4. bfs라는 함수는 사실 불필요, 출발지가 (0,0)으로 고정이므로
     """
     n=len(maps)
     m=len(maps[0])
-    
-    def bfs(start):
-        sr, sc = start
-        dist = [[999]*m for i in range(n)]
-        dist[sr][sc]=0
-        queue=deque([(sr,sc)])
+
+    # -1은 미방문, 시작거리를 1로 함으로써 맨 마지막 수식 간소화
+    dist = [[-1]*m for i in range(n)]
+    dist[0][0]=1 
+    queue=deque([(0,0)])
+    directions = [(-1,0),(1,0),(0,-1),(0,1)]
         
-        while queue:
-            r,c = queue.popleft()
-            nxt = []
-            if r-1 >=0 and maps[r-1][c] : nxt.append((r-1,c)) #append는 튜플을 하나의 원소로 받음
-            if c-1 >=0 and maps[r][c-1] : nxt.append((r,c-1))
-            if r+1 <=n-1 and maps[r+1][c] : nxt.append((r+1,c))
-            if c+1 <=m-1 and maps[r][c+1] : nxt.append((r,c+1))
+    while queue:
+        r,c = queue.popleft()
+        
+        #조기종료: 출발지가 도착지
+        if (r,c)==(n-1,m-1):
+            return dist[r][c]
+
+        #상하좌우 탐색 (와 훨씬 더 효율적이네!)
+        for dr, dc in directions:
+            nr, nc = r + dr, c + dc
+            if not (0 <=nr < n and 0 <=nc < m):
+                continue
             
-            for nr, nc in nxt:
-                if dist[nr][nc] ==999:
-                    dist[nr][nc] = dist[r][c] + 1
-                    queue.append([nr,nc])
-        print(dist)
-        return dist
+            #초기방문이 아니라면 패스
+            if maps[nr][nc] == 0 or dist[nr][nc] != -1:
+                continue
+            dist[nr][nc] = dist[r][c] + 1
+            queue.append([nr,nc])
         
-    ans = bfs((0,0))[n-1][m-1]
-    
-    return ans+1 if ans <999 else -1
+    return dist[n-1][m-1] 
         
     
     
